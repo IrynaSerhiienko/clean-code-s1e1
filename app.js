@@ -1,3 +1,4 @@
+alert('Привет! Проверь, пожалуйста мою работу на день позже. Я еще в процессе. Благодарю!')
 //Document is the DOM can be accessed in the console with document.window.
 // Tree is from the top, html, body, p etc.
 
