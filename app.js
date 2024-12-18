@@ -1,5 +1,3 @@
-alert('Привет! Проверь, пожалуйста мою работу на день позже. Я еще в процессе. Благодарю!')
-
 //Document is the DOM can be accessed in the console with document.window.
 // Tree is from the top, html, body, p etc.
 
@@ -11,21 +9,21 @@ alert('Привет! Проверь, пожалуйста мою работу н
 // Event handling, user interaction is what starts the code execution.
 
 var taskInput = document.getElementById('new-task');//Add a new task.
-const addButton = document.querySelector('.button');//first button
+const addButton = document.querySelector('.main__button');//first button
 var incompleteTaskHolder = document.getElementById('incomplete-tasks');//ul of #incompleteTasks
 var completedTasksHolder = document.getElementById('completed-tasks');//completed-tasks
 
 //New task list item
 var createNewTaskElement = function(taskString) {
   var listItem = document.createElement('li');
-  listItem.className = 'task-item';
+  listItem.className = 'main__task-item';
 
   //input (checkbox)
   var checkBox = document.createElement('input');//checkbx
   //label
   var label = document.createElement('label');//label
   label.innerText = taskString;
-  label.className = 'task task-title';
+  label.className = 'main__task main__task-title';
   //input (text)
   var editInput = document.createElement('input');//text
   //button.edit
@@ -36,14 +34,14 @@ var createNewTaskElement = function(taskString) {
 
   //Each elements, needs appending
   checkBox.type = 'checkbox';
-  checkBox.className = 'checkbox';
+  checkBox.className = 'main__checkbox';
   editInput.type = 'text';
-  editInput.className = 'task';
+  editInput.className = 'main__task';
 
   editButton.innerText = 'Edit'; //innerText encodes special characters, HTML does not.
-  editButton.className = 'button edit';
-  deleteButton.className = 'button delete';
-  deleteButtonImg.className = 'button-remove';
+  editButton.className = 'main__button main__button--edit';
+  deleteButton.className = 'main__button main__button--delete';
+  deleteButtonImg.className = 'main__button-remove';
   deleteButtonImg.src='./remove.svg';
   deleteButton.appendChild(deleteButtonImg);
 
@@ -78,8 +76,8 @@ var editTask = function() {
 
   var editInput = listItem.querySelector('input[type=text]');
   var label = listItem.querySelector('label');
-  var editBtn = listItem.querySelector('.edit');
-  var containsClass = listItem.classList.contains('edit-mode');
+  var editBtn = listItem.querySelector('.main__button--edit');
+  var containsClass = listItem.classList.contains('main__task-item--edit-mode');
   //If class of the parent is .editmode
   if(containsClass) {
     //switch to .editmode
@@ -91,7 +89,7 @@ var editTask = function() {
       editBtn.innerText = 'Save';
   }
   //toggle .editmode on the parent.
-  listItem.classList.toggle('edit-mode');
+  listItem.classList.toggle('main__task-item--edit-mode');
 };
 
 //Delete task.
@@ -140,8 +138,8 @@ var bindTaskEvents = function(taskListItem,checkBoxEventHandler) {
   console.log('bind list item events');
   //select ListItems children
   var checkBox = taskListItem.querySelector('input[type=checkbox]');
-  var editButton = taskListItem.querySelector('.button.edit');
-  var deleteButton = taskListItem.querySelector('.button.delete');
+  var editButton = taskListItem.querySelector('.main__button.main__button--edit');
+  var deleteButton = taskListItem.querySelector('.main__button.main__button--delete');
 
   //Bind editTask to edit button.
   editButton.onclick = editTask;

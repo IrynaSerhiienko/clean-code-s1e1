@@ -6,7 +6,7 @@
 }
 
 .hero,
-.main-content {
+.main {
   width: 500px;
   margin: 0 auto;
   display: block;
@@ -16,11 +16,11 @@
   text-align: right;
 }
 
-.hero-image {
+.hero__image {
   width: 100%;
 }
 
-.more-info-link {
+.hero__link {
   font-family: fantasy, cursive;
 }
 
@@ -30,17 +30,17 @@
   }
 }
 
-.task {
+.main__task {
   width: 56%;
   display: inline-block;
   flex-grow: 1;
 }
 
-.task-row-wrapper {
+.main__task-row-wrapper {
   display: flex;
 }
 
-.tasks-list {
+.main__tasks-list {
   margin: 0;
   padding: 0px;
 }
@@ -54,7 +54,7 @@ button {
   outline: none;
 }
 
-.button {
+.main__button {
   background: none;
   border: 0px;
   color: #888;
@@ -64,12 +64,12 @@ button {
   cursor: pointer;
 }
 
-.button:hover {
+.main__button:hover {
   color: #3a3a3a;
 }
 
 /* Heading */
-.title {
+.main__title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -104,7 +104,7 @@ input[type="text"]:focus {
 }
 
 /* Task list */
-.task-item {
+.main__task-item {
   overflow: hidden;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
@@ -113,52 +113,52 @@ input[type="text"]:focus {
   align-items: center;
 }
 
-.task-item > * {
+.main__task-item > * {
   vertical-align: middle;
 }
 
-.checkbox {
+.main__checkbox {
   margin: 0 10px;
 }
 
-.task-item > .task-title {
+.main__task-item > .main__task-title {
   padding-left: 10px;
   box-sizing: border-box;
   font-size: 18px;
   width: 226px;
 }
 
-.task-item > input[type="text"] {
+.main__task-item > input[type="text"] {
   width: 226px;
 }
 
-.button-remove {
+.main__button-remove {
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
 
-.button-remove:hover {
+.main__button-remove:hover {
   transform: rotateZ(0);
 }
 
 /* Completed */
-#completed-tasks .task-title {
+#completed-tasks .main__task-title {
   text-decoration: line-through;
   color: #888;
 }
 
 /* Edit Task */
-.task-item input[type="text"] {
+.main__task-item input[type="text"] {
   display: none;
 }
 
-.edit-mode input[type="text"] {
+.main__task-item--edit-mode input[type="text"] {
   display: inline-block;
   width: 224px;
 }
 
-.edit-mode .task-title {
+.main__task-item--edit-mode .main__task-title {
 display: none;
 }
 
